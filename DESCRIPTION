@@ -1,11 +1,13 @@
 Package: LiquidGaugeR
 Type: Package
-Title: What the Package Does (Title Case)
+Title: D3 Liquid Fill Gauge
 Version: 0.1.0
 Author: Jorge Ayuso Rejas
 Maintainer: Jorge Ayuso Rejas <jayusor@gmail.com>
 Description: Htmlwidget for D3 Liquid Fill Gauge
-             Based on https://github.com/ugomeda/d3-liquid-fill-gauge
-License: MIT
+    Based on https://github.com/ugomeda/d3-liquid-fill-gauge
+License: GPL
+Imports: htmlwidgets
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 5.0.1
