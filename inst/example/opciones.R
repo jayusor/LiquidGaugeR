@@ -1,3 +1,4 @@
+library(LiquidGaugeR)
 list(
   # Values
   minValue= 0, # The gauge minimum value.
@@ -45,10 +46,23 @@ list(
   waveAnimateTime= 1000,
   waveHeight= 0.05,
   waveAnimate= TRUE,
-  waveRise= FALSE,
+  waveRise= TRUE,
   waveOffset= 0.25,
   textSize= 0.75,
   waveCount= 3
-) -> opciones
+) -> opciones1
 
-liquidgauge(40,opciones)
+list(
+  circleColor= "#FF7777",
+  textColor= "#FF4444",
+  waveTextColor= "#FFAAAA",
+  waveColor= "#FFDDDD",
+  circleThickness= 0.2,
+  textVertPosition= 0.2,
+  waveAnimateTime= 1000,
+  backgroundColor= "#e0e0e0",
+  valueCountUpAtStart= FALSE,
+  waveRiseAtStart= T
+) -> opciones2
+
+liquid_gauge(round(runif(1)*100),opciones2)

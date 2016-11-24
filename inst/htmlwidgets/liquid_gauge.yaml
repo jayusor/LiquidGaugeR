@@ -7,3 +7,4 @@ dependencies:
   version: 1.0.0
   src: htmlwidgets/lib/d3-liquid-fill-gauge
   script: liquidFillGauge.js
+  stylesheet: liquidFillGauge.css

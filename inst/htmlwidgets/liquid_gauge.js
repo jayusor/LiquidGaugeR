@@ -4,7 +4,7 @@ HTMLWidgets.widget({
 
   type: 'output',
 
-  factory: function(el, width, height) {
+  factory: function(el, width, height,x) {
 
     // TODO: define shared variables for this instance
     var id_gauge = el.id+"_gauge";
@@ -15,20 +15,24 @@ HTMLWidgets.widget({
       .attr("height", height)
       .attr("id",id_gauge);
 
-    var gauge = d3.select("#"+id_gauge);
-    gauge.call(d3.liquidfillgauge,1,{
+    // Opciones por defecto
+    var default_opts = {
       waveAnimateTime: 2000,
       waveHeight: 0.3,
       waveCount: 1
-    });
+    };
+
+    var gauge = d3.select("#"+id_gauge);
 
     return {
 
       renderValue: function(x) {
 
-        // TODO: code to render the widget, e.g.
-        gauge.on("valueChanged")(x.number);
+        // Modifico las opciones
+        for (var name in x.options)
+          default_opts[name] = x.options[name];
 
+        gauge.call(d3.liquidfillgauge,x.number,x.options);
 
       },
 
