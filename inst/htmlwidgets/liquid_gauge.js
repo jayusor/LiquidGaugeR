@@ -16,7 +16,11 @@ HTMLWidgets.widget({
       .attr("id",id_gauge);
 
     var gauge = d3.select("#"+id_gauge);
-    gauge.call(d3.liquidfillgauge,1);
+    gauge.call(d3.liquidfillgauge,1,{
+      waveAnimateTime: 2000,
+      waveHeight: 0.3,
+      waveCount: 1
+    });
 
     return {
 
