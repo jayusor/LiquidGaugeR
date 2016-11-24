@@ -8,6 +8,10 @@
 #
 
 library(shiny)
+library(devtools)
+if(!"LiquidGaugeR" %in% installed.packages())
+  install_github("jayusor/LiquidGaugeR")
+
 library(LiquidGaugeR)
 
 # Define UI for application that draws a histogram
