@@ -15,25 +15,19 @@ HTMLWidgets.widget({
       .attr("height", height)
       .attr("id",id_gauge);
 
-    // Opciones por defecto
-    var default_opts = {
-      waveAnimateTime: 2000,
-      waveHeight: 0.3,
-      waveCount: 1
-    };
-
     var gauge = d3.select("#"+id_gauge);
+    var initialized = false;
 
     return {
 
       renderValue: function(x) {
+          if (!initialized) {
+            initialized = true;
+            gauge.call(d3.liquidfillgauge,x.number,x.options);
 
-        // Modifico las opciones
-        for (var name in x.options)
-          default_opts[name] = x.options[name];
-
-        gauge.call(d3.liquidfillgauge,x.number,x.options);
-
+          } else {
+            gauge.on("valueChanged")(x.number);
+          }
       },
 
       resize: function(width, height) {
