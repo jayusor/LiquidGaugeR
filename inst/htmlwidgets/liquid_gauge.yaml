@@ -1,0 +1,9 @@
+dependencies:
+- name: d3
+  version: 3.5.17
+  src: htmlwidgets/lib/d3
+  script: ./d3.min.js
+- name: d3-liquid-fill-gauge
+  version: 1.0.0
+  src: htmlwidgets/lib/d3-liquid-fill-gauge
+  script: liquidFillGauge.js
